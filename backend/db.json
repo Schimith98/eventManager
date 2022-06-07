@@ -3,6 +3,7 @@
     {
       "id": 1,
       "type": "empresas",
+      "title": "Adipiscing elit",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque neque tortor, laoreet in lacus in, rutrum pellentesque sapien. Mauris diam velit, congue non mollis non, ultrices at nunc. Sed ac diam id mauris auctor elementum. Nullam elit augue, feugiat nec facilisis eu, ullamcorper ac turpis. Nulla blandit blandit euismod. Pellentesque risus sem, ornare in lacus sit amet, interdum fermentum sem. Donec imperdiet tellus eu justo finibus, sed faucibus nunc varius.",
       "date": "15/08/2022",
       "time": "20:00:00",
@@ -26,6 +27,7 @@
     {
       "id": 2,
       "type": "universidades",
+      "title": "Dolor sit amet",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque neque tortor, laoreet in lacus in, rutrum pellentesque sapien. Mauris diam velit, congue non mollis non, ultrices at nunc. Sed ac diam id mauris auctor elementum. Nullam elit augue, feugiat nec facilisis eu, ullamcorper ac turpis. Nulla blandit blandit euismod. Pellentesque risus sem, ornare in lacus sit amet, interdum fermentum sem. Donec imperdiet tellus eu justo finibus, sed faucibus nunc varius.",
       "date": "15/08/2022",
       "time": "20:00:00",
@@ -49,6 +51,7 @@
     {
       "id": 3,
       "type": "empresas",
+      "title": "Título de evento",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque neque tortor, laoreet in lacus in, rutrum pellentesque sapien. Mauris diam velit, congue non mollis non, ultrices at nunc. Sed ac diam id mauris auctor elementum. Nullam elit augue, feugiat nec facilisis eu, ullamcorper ac turpis. Nulla blandit blandit euismod. Pellentesque risus sem, ornare in lacus sit amet, interdum fermentum sem. Donec imperdiet tellus eu justo finibus, sed faucibus nunc varius.",
       "date": "15/08/2022",
       "time": "20:00:00",
