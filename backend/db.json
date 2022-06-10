@@ -12,15 +12,15 @@
       "tickets": [
         {
           "id": 1,
-          "available": "true"
+          "available": true
         },
         {
           "id": 2,
-          "available": "true"
+          "available": true
         },
         {
           "id": 3,
-          "available": "true"
+          "available": true
         }
       ]
     },
@@ -36,15 +36,15 @@
       "tickets": [
         {
           "id": 1,
-          "available": "true"
+          "available": true
         },
         {
           "id": 2,
-          "available": "true"
+          "available": true
         },
         {
           "id": 3,
-          "available": "true"
+          "available": true
         }
       ]
     },
@@ -60,15 +60,15 @@
       "tickets": [
         {
           "id": 1,
-          "available": "true"
+          "available": true
         },
         {
           "id": 2,
-          "available": "true"
+          "available": true
         },
         {
           "id": 3,
-          "available": "true"
+          "available": true
         }
       ]
     }

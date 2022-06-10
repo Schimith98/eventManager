@@ -1,11 +1,26 @@
-import React from 'react';
-import {View, Text} from 'react-native';
+import axios from 'axios';
+import React, {useEffect} from 'react';
+import {events as eventsService} from '../../services/events';
+import {Container, Title} from './style';
 
-const Admin = () => {
+const Admin: React.FC = () => {
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = async () => {
+    try {
+      // const response = await eventsService.getAll();
+      // const response = await eventsService.delete(4);
+    } catch (error) {
+      console.log('Error /admin: (line 11):' + error);
+    }
+  };
+
   return (
-    <View>
-      <Text>Admin Page</Text>
-    </View>
+    <Container>
+      <Title>Admin Page</Title>
+    </Container>
   );
 };
 
