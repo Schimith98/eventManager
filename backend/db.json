@@ -3,23 +3,31 @@
     {
       "id": 1,
       "type": "empresas",
-      "title": "Adipiscing elit",
+      "title": "Adipiscing eli2",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque neque tortor, laoreet in lacus in, rutrum pellentesque sapien. Mauris diam velit, congue non mollis non, ultrices at nunc. Sed ac diam id mauris auctor elementum. Nullam elit augue, feugiat nec facilisis eu, ullamcorper ac turpis. Nulla blandit blandit euismod. Pellentesque risus sem, ornare in lacus sit amet, interdum fermentum sem. Donec imperdiet tellus eu justo finibus, sed faucibus nunc varius.",
       "date": "15/08/2022",
-      "time": "20:00:00",
+      "hour": "",
       "place": "Lorem ipsum",
       "imageURL": "https://atualeventos.com/wp-content/uploads/2020/09/atual-eventos-banner.jpg",
       "tickets": [
         {
           "id": 1,
+          "price": 100,
           "available": true
         },
         {
           "id": 2,
+          "price": 100,
           "available": true
         },
         {
           "id": 3,
+          "price": 100,
+          "available": true
+        },
+        {
+          "id": 4,
+          "price": 100,
           "available": true
         }
       ]
@@ -30,21 +38,24 @@
       "title": "Dolor sit amet",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque neque tortor, laoreet in lacus in, rutrum pellentesque sapien. Mauris diam velit, congue non mollis non, ultrices at nunc. Sed ac diam id mauris auctor elementum. Nullam elit augue, feugiat nec facilisis eu, ullamcorper ac turpis. Nulla blandit blandit euismod. Pellentesque risus sem, ornare in lacus sit amet, interdum fermentum sem. Donec imperdiet tellus eu justo finibus, sed faucibus nunc varius.",
       "date": "15/08/2022",
-      "time": "20:00:00",
+      "hour": "20:00:00",
       "place": "Lorem ipsum",
       "imageURL": "https://atualeventos.com/wp-content/uploads/2020/09/atual-eventos-banner.jpg",
       "tickets": [
         {
           "id": 1,
-          "available": true
+          "available": true,
+          "price": 100
         },
         {
           "id": 2,
-          "available": true
+          "available": true,
+          "price": 100
         },
         {
           "id": 3,
-          "available": true
+          "available": true,
+          "price": 100
         }
       ]
     },
@@ -54,20 +65,40 @@
       "title": "Título de evento",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque neque tortor, laoreet in lacus in, rutrum pellentesque sapien. Mauris diam velit, congue non mollis non, ultrices at nunc. Sed ac diam id mauris auctor elementum. Nullam elit augue, feugiat nec facilisis eu, ullamcorper ac turpis. Nulla blandit blandit euismod. Pellentesque risus sem, ornare in lacus sit amet, interdum fermentum sem. Donec imperdiet tellus eu justo finibus, sed faucibus nunc varius.",
       "date": "15/08/2022",
-      "time": "20:00:00",
+      "hour": "20:00:00",
       "place": "Lorem ipsum",
       "imageURL": "https://atualeventos.com/wp-content/uploads/2020/09/atual-eventos-banner.jpg",
       "tickets": [
         {
           "id": 1,
-          "available": true
+          "available": true,
+          "price": 100
         },
         {
           "id": 2,
-          "available": true
+          "available": true,
+          "price": 100
         },
         {
           "id": 3,
+          "available": true,
+          "price": 100
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "empresas",
+      "title": "titulo de t",
+      "description": "",
+      "date": "",
+      "hour": "",
+      "place": "",
+      "imageURL": "",
+      "tickets": [
+        {
+          "id": 1,
+          "price": 100,
           "available": true
         }
       ]

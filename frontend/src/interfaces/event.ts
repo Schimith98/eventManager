@@ -4,7 +4,7 @@ export interface IEvent {
   title: string;
   description: string;
   date: string;
-  time: string;
+  hour: string;
   place: string;
   imageURL: string;
   tickets: ITicket[];
@@ -13,4 +13,5 @@ export interface IEvent {
 export interface ITicket {
   id: number;
   available: boolean;
+  price: number;
 }

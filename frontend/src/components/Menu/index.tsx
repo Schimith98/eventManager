@@ -32,8 +32,8 @@ const Menu = () => {
             <Title>Início</Title>
           </Button>
           <Button onPress={() => goTo('Admin')}>
-            <Icon name="plus-circle" size={16} color="#00a5db" />
-            <Title>Criar Evento</Title>
+            <Icon name="clipboard" size={16} color="#00a5db" />
+            <Title>Adm. Eventos</Title>
           </Button>
         </Container>
       </Modal>
