@@ -35,15 +35,10 @@ const Admin: React.FC = () => {
     setLoading(false);
   };
 
-  const countTicketsAvailables = async tickets => {
-    const ticketsAvailable = await tickets.filter(t => t.available);
-    return ticketsAvailable.length();
-  };
-
   const showDeleteAlert = id =>
     Alert.alert(
-      'Confirmar deleção',
-      'My Alert Msg',
+      'Deletar',
+      'Você realmente deseja excluir o evento?',
       [
         {
           text: 'Cancel',

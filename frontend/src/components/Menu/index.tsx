@@ -28,17 +28,17 @@ const Menu = () => {
         onBackButtonPress={() => toggleModal()}>
         <Container>
           <Button onPress={() => goTo('Home')}>
-            <Icon name="home" size={16} color="#00a5db" />
+            <Icon name="home" size={16} color="#6200ee" />
             <Title>Início</Title>
           </Button>
           <Button onPress={() => goTo('Admin')}>
-            <Icon name="clipboard" size={16} color="#00a5db" />
+            <Icon name="clipboard" size={16} color="#6200ee" />
             <Title>Adm. Eventos</Title>
           </Button>
         </Container>
       </Modal>
       <TouchableOpacity onPress={toggleModal}>
-        <Icon name="menu" size={25} color="#00a5db" />
+        <Icon name="menu" size={25} color="#6200ee" />
       </TouchableOpacity>
     </>
   );

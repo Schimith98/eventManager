@@ -87,18 +87,63 @@
       ]
     },
     {
-      "id": 6,
-      "type": "empresas",
-      "title": "titulo de t",
-      "description": "",
-      "date": "",
-      "hour": "",
-      "place": "",
+      "id": 4,
+      "type": "universidades",
+      "title": "alalalala",
+      "description": "teste testando",
+      "date": "01/08/2022",
+      "hour": "12:00",
+      "place": "Centro de festas",
       "imageURL": "",
       "tickets": [
         {
           "id": 1,
-          "price": 100,
+          "price": 190,
+          "available": true
+        },
+        {
+          "id": 2,
+          "price": 190,
+          "available": true
+        },
+        {
+          "id": 3,
+          "price": 190,
+          "available": true
+        },
+        {
+          "id": 4,
+          "price": 190,
+          "available": true
+        },
+        {
+          "id": 5,
+          "price": 190,
+          "available": true
+        },
+        {
+          "id": 6,
+          "price": 190,
+          "available": true
+        },
+        {
+          "id": 7,
+          "price": 190,
+          "available": true
+        },
+        {
+          "id": 8,
+          "price": 190,
+          "available": true
+        },
+        {
+          "id": 9,
+          "price": 190,
+          "available": true
+        },
+        {
+          "id": 10,
+          "price": 190,
           "available": true
         }
       ]

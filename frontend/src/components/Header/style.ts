@@ -10,6 +10,6 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
-  color: #00a5db;
+  color: #6200ee;
   font-size: 22px;
 `;

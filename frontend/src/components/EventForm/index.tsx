@@ -3,7 +3,7 @@ import {Container, Row, Title, Text} from './style';
 import {RadioButton, TextInput, Button} from 'react-native-paper';
 import {events as eventsService} from '../../services/events';
 import {Formik} from 'formik';
-import {IEvent} from '../../interfaces/event';
+import {IEvent, ITicket} from '../../interfaces/event';
 import {Alert} from 'react-native';
 
 interface IEventForm {
@@ -34,7 +34,7 @@ const EventForm = ({event, toogleModalVisibility, updateList}) => {
   };
 
   const mountObject = async obj => {
-    const ticketsArray = [];
+    const ticketsArray: ITicket[] = [];
     for (let i = 0; i < obj.ticketsAmount; i++) {
       ticketsArray.push({
         id: i + 1,

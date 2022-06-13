@@ -15,7 +15,7 @@ export const Button = styled.TouchableOpacity`
 `;
 
 export const Title = styled.Text`
-  color: #00a5db;
+  color: #6200ee;
   margin: 8px 0;
   padding-left: 8px;
 `;
