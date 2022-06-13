@@ -2,6 +2,9 @@ import api from './api';
 import {IEvent} from '../interfaces/event';
 
 export const events = {
+  getOne: async id => {
+    return api.get(`/events/${id}`);
+  },
   getAll: async () => {
     return api.get(`/events`);
   },

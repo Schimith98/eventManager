@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, Button} from 'react-native';
-import Header from '../../components/Header';
-import Menu from '../../components/Menu';
+import {View} from 'react-native';
 import {
   Container,
   Subtitle,
@@ -16,6 +14,7 @@ import {Divider, List} from 'react-native-paper';
 import {IEvent} from '../../interfaces/event';
 import {events as eventsService} from '../../services/events';
 import Loading from '../../components/Loading';
+import {useNavigation} from '@react-navigation/native';
 
 const eventImageDefault1 = {
   uri: 'https://atualeventos.com/wp-content/uploads/2020/09/atual-eventos-banner.jpg',
@@ -31,6 +30,8 @@ const Home: React.FC = () => {
   const [collegeEventList, setCollegeEventList] = useState<
     IEvent[] | undefined
   >(undefined);
+
+  const navigation = useNavigation();
 
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -58,8 +59,8 @@ const Home: React.FC = () => {
       }
     });
 
-    setCollegeEventList(auxCompanyEventsList);
-    setCompanyEventList(auxCollegeEventsList);
+    setCollegeEventList(auxCollegeEventsList);
+    setCompanyEventList(auxCompanyEventsList);
   };
 
   useEffect(() => {
@@ -89,6 +90,7 @@ const Home: React.FC = () => {
                 description={`${e.place}\n${e.date} às ${e.hour}`}
                 left={props => <List.Icon {...props} icon="calendar" />}
                 key={(i * 2) / 100}
+                onPress={() => navigation.navigate('EventPage', {event: e})}
               />
             ))}
           </Accordion>
@@ -102,6 +104,7 @@ const Home: React.FC = () => {
                 description={`${e.place}\n${e.date} às ${e.hour}`}
                 left={props => <List.Icon {...props} icon="calendar" />}
                 key={i * 2}
+                onPress={() => navigation.navigate('EventPage', {event: e})}
               />
             ))}
           </Accordion>

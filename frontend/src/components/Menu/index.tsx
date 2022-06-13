@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import Modal from 'react-native-modal';
 import {Container, Button, Title} from './style';
 import Icon from 'react-native-vector-icons/Feather';
-import * as RootNavigation from '../../routes/RootNavigation';
 import {TouchableOpacity, TouchableOpacityBase} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 const Menu = () => {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -11,8 +11,10 @@ const Menu = () => {
     setModalVisible(!isModalVisible);
   };
 
+  const navigation = useNavigation();
+
   const goTo = routeName => {
-    RootNavigation.navigate(routeName);
+    navigation.navigate(routeName);
     toggleModal();
   };
 
