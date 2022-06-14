@@ -17,11 +17,16 @@ import {IEvent} from '../../interfaces/event';
 import {View, Text} from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import Loading from '../../components/Loading';
+import Modal from 'react-native-modal';
+import BuyForm from '../../components/BuyForm';
 
 const EventPage: React.FC = ({route}) => {
   const [event, setEvent] = useState<IEvent | null>();
 
   const navigation = useNavigation();
+
+  const [isModalVisible, setModalVisible] = useState<boolean>(false);
+  const toogleModalVisibility = () => setModalVisible(!isModalVisible);
 
   useEffect(() => {
     if (route.params.event) {
@@ -42,7 +47,7 @@ const EventPage: React.FC = ({route}) => {
             <Subtitle>
               <Icon name="enviromento" size={16} color="white" /> {event.place}
             </Subtitle>
-            <ButtonContainer>
+            <ButtonContainer onPress={() => toogleModalVisibility()}>
               <ButtonText>COMPRAR INGRESSO</ButtonText>
             </ButtonContainer>
           </InsideContainer1>
@@ -87,6 +92,10 @@ const EventPage: React.FC = ({route}) => {
           </InsideContainer2>
         </MainContainer>
       )}
+
+      <Modal isVisible={isModalVisible}>
+        <BuyForm event={event} toogleModalVisibility={toogleModalVisibility} />
+      </Modal>
     </>
   );
 };

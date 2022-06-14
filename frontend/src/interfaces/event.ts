@@ -14,4 +14,5 @@ export interface ITicket {
   id: number;
   available: boolean;
   price: number;
+  buyerEmail: string | undefined;
 }
