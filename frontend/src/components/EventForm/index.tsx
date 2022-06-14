@@ -48,8 +48,16 @@ const EventForm = ({event, toogleModalVisibility, updateList}) => {
       ticketsArray.push({
         id: i + 1,
         price: parseFloat(obj.ticketPrice),
-        available: i < event.tickets.length ? event.tickets[i].available : true,
-        buyerEmail: i < event.tickets.length ? event.tickets[i].buyerEmail : '',
+        available: event
+          ? i < event.tickets.length
+            ? event.tickets[i].available
+            : true
+          : true,
+        buyerEmail: event
+          ? i < event.tickets.length
+            ? event.tickets[i].buyerEmail
+            : ''
+          : '',
       });
     }
 
@@ -163,7 +171,7 @@ const EventForm = ({event, toogleModalVisibility, updateList}) => {
           />
 
           <SubmitButton mode="contained" onPress={() => handleSubmit()}>
-            Submit
+            Salvar
           </SubmitButton>
         </Container>
       )}

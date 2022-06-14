@@ -15,6 +15,7 @@ import {IEvent} from '../../interfaces/event';
 import {events as eventsService} from '../../services/events';
 import Loading from '../../components/Loading';
 import {HomeNavigationProps} from '../../interfaces/navigation';
+import {useIsFocused} from '@react-navigation/native';
 
 const eventImageDefault1 = {
   uri: 'https://atualeventos.com/wp-content/uploads/2020/09/atual-eventos-banner.jpg',
@@ -23,7 +24,7 @@ const eventImageDefault2 = {
   uri: 'https://d8rsosim10d20.cloudfront.net/small_samuel_pereira_uf2nn_AN_Wa8_Q_unsplash_1_b8d0c29126.jpg',
 };
 
-const Home = ({navigation}: HomeNavigationProps) => {
+const Home = ({route, navigation}: HomeNavigationProps) => {
   const [companyEventList, setCompanyEventList] = useState<
     IEvent[] | undefined
   >(undefined);
@@ -61,9 +62,13 @@ const Home = ({navigation}: HomeNavigationProps) => {
     setCompanyEventList(auxCompanyEventsList);
   };
 
+  const isFocused = useIsFocused();
+
   useEffect(() => {
-    getData();
-  }, []);
+    if (isFocused) {
+      getData();
+    }
+  }, [isFocused]);
 
   return (
     <Container>

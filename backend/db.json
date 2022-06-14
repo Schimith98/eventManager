@@ -2,7 +2,7 @@
   "events": [
     {
       "id": 1,
-      "type": "empresas",
+      "type": "universidades",
       "title": "Titulo Teste 1",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque neque tortor, laoreet in lacus in, rutrum pellentesque sapien. Mauris diam velit, congue non mollis non, ultrices at nunc. Sed ac diam id mauris auctor elementum. Nullam elit augue, feugiat nec facilisis eu, ullamcorper ac turpis. Nulla blandit blandit euismod. Pellentesque risus sem, ornare in lacus sit amet, interdum fermentum sem. Donec imperdiet tellus eu justo finibus, sed faucibus nunc varius.",
       "date": "15/08/2022",
@@ -13,8 +13,8 @@
         {
           "id": 1,
           "price": 100,
-          "available": true,
-          "buyerEmail": ""
+          "available": false,
+          "buyerEmail": "teste123@email.com"
         },
         {
           "id": 2,
@@ -475,6 +475,42 @@
         {
           "id": 10,
           "price": 100,
+          "available": true,
+          "buyerEmail": ""
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "type": "universidades",
+      "title": "Testando",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque neque tortor, laoreet in lacus in, rutrum pellentesque sapien. Mauris diam velit, congue non mollis non, ultrices at nunc. Sed ac diam id mauris auctor elementum. Nullam elit augue, feugiat nec facilisis eu, ullamcorper ac turpis. Nulla blandit blandit euismod. Pellentesque risus sem, ornare in lacus sit amet, interdum fermentum sem. Donec imperdiet tellus eu justo finibus, sed faucibus nunc varius.",
+      "date": "10/06/2022",
+      "hour": "10:00:00",
+      "place": "Local Teste",
+      "imageURL": "https://atualeventos.com/wp-content/uploads/2020/09/atual-eventos-banner.jpg",
+      "tickets": [
+        {
+          "id": 1,
+          "price": 1000,
+          "available": true,
+          "buyerEmail": ""
+        },
+        {
+          "id": 2,
+          "price": 1000,
+          "available": true,
+          "buyerEmail": ""
+        },
+        {
+          "id": 3,
+          "price": 1000,
+          "available": true,
+          "buyerEmail": ""
+        },
+        {
+          "id": 4,
+          "price": 1000,
           "available": true,
           "buyerEmail": ""
         }
