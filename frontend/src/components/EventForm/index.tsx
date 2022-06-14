@@ -50,6 +50,7 @@ const EventForm = ({event, toogleModalVisibility, updateList}) => {
         price: parseFloat(obj.ticketPrice),
         // available: event ? event.tickets[i].available : true,
         available: true,
+        buyerEmail: '',
       });
     }
 

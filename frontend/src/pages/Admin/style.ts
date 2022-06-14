@@ -35,3 +35,7 @@ export const Text = styled.Text`
   margin: 8px 0;
   justify-content: center;
 `;
+
+export const IconButton = styled.TouchableOpacity`
+  margin: 0 160px;
+`;

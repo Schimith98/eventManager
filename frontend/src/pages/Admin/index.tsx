@@ -1,11 +1,17 @@
-import axios from 'axios';
 import React, {useEffect, useState} from 'react';
 import {events as eventsService} from '../../services/events';
-import {Container, PlusButton, TableContainer, Text, Title} from './style';
+import {
+  Container,
+  IconButton,
+  PlusButton,
+  TableContainer,
+  Text,
+  Title,
+} from './style';
 import {DataTable} from 'react-native-paper';
 import {IEvent} from '../../interfaces/event';
 import Icon from 'react-native-vector-icons/AntDesign';
-import {Alert, TouchableOpacity, View} from 'react-native';
+import {Alert} from 'react-native';
 import Loading from '../../components/Loading';
 import Modal from 'react-native-modal';
 import EventForm from '../../components/EventForm';
@@ -78,6 +84,19 @@ const Admin: React.FC = () => {
     toogleModalVisibility();
   };
 
+  const showTickets = (event: IEvent) => {
+    let ticketsUnavailable = 0;
+    //console.log(event.tickets[0].available);
+    for (let i = 0; i < event.tickets.length; i++) {
+      if (!event.tickets[i].available) {
+        ticketsUnavailable = ticketsUnavailable + 1;
+      }
+    }
+    Alert.alert(
+      `Ingressos vendidos:${ticketsUnavailable}/${event.tickets.length}`,
+    );
+  };
+
   return (
     <>
       <Container>
@@ -97,23 +116,24 @@ const Admin: React.FC = () => {
               <DataTable>
                 <DataTable.Header>
                   <DataTable.Title>Título</DataTable.Title>
-                  <DataTable.Title numeric>Editar</DataTable.Title>
-                  <DataTable.Title numeric>Deletar</DataTable.Title>
+                  <DataTable.Title> </DataTable.Title>
                 </DataTable.Header>
 
                 {eventList.map((event, i) => (
                   <DataTable.Row key={i * 7}>
                     <DataTable.Cell>{event.title}</DataTable.Cell>
                     <DataTable.Cell numeric>
-                      <TouchableOpacity onPress={() => openEditModal(event)}>
+                      <IconButton onPress={() => showTickets(event)}>
+                        <Icon name="eye" size={25} color="black" />
+                      </IconButton>
+                      <Text>{'      '}</Text>
+                      <IconButton onPress={() => openEditModal(event)}>
                         <Icon name="edit" size={25} color="black" />
-                      </TouchableOpacity>
-                    </DataTable.Cell>
-                    <DataTable.Cell numeric>
-                      <TouchableOpacity
-                        onPress={() => showDeleteAlert(event.id)}>
+                      </IconButton>
+                      <Text>{'      '}</Text>
+                      <IconButton onPress={() => showDeleteAlert(event.id)}>
                         <Icon name="delete" size={25} color="red" />
-                      </TouchableOpacity>
+                      </IconButton>
                     </DataTable.Cell>
                   </DataTable.Row>
                 ))}
