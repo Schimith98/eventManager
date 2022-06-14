@@ -25,7 +25,7 @@ const Menu = () => {
         animationIn="slideInLeft"
         animationOut="slideOutLeft"
         backdropColor="rgba(0,0,0,0)"
-        style={{margin: 0, width: 130}}
+        style={{margin: 0, width: 150}}
         onBackdropPress={() => toggleModal()}
         onBackButtonPress={() => toggleModal()}>
         <Container>

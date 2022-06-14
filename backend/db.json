@@ -147,6 +147,23 @@
           "available": true
         }
       ]
+    },
+    {
+      "id": 5,
+      "type": "universidades",
+      "title": "titulo teste",
+      "description": "aloualou",
+      "date": "aaaa",
+      "hour": "",
+      "place": "",
+      "imageURL": "",
+      "tickets": [
+        {
+          "id": 1,
+          "price": 100,
+          "available": true
+        }
+      ]
     }
   ]
 }

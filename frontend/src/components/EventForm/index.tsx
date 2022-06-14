@@ -1,11 +1,20 @@
 import React, {useState} from 'react';
-import {Container, Row, Title, Text} from './style';
-import {RadioButton, TextInput, Button} from 'react-native-paper';
+import {
+  Container,
+  Row,
+  Title,
+  Text,
+  CloseButton,
+  Label,
+  Input,
+  SubmitButton,
+} from './style';
+import {RadioButton} from 'react-native-paper';
 import {events as eventsService} from '../../services/events';
 import {Formik} from 'formik';
 import {IEvent, ITicket} from '../../interfaces/event';
 import {Alert} from 'react-native';
-
+import Icon from 'react-native-vector-icons/AntDesign';
 interface IEventForm {
   id: number | null;
   type: string;
@@ -86,69 +95,78 @@ const EventForm = ({event, toogleModalVisibility, updateList}) => {
     <Formik initialValues={initialValues} onSubmit={values => onSubmit(values)}>
       {({handleChange, handleBlur, handleSubmit, setFieldValue, values}) => (
         <Container>
-          <Title>{event ? 'Editar evento' : 'Criar Evento'}</Title>
-          <TextInput
+          <Row>
+            <Title>{event ? 'Editar evento' : 'Criar Evento'}</Title>
+            <CloseButton onPress={() => toogleModalVisibility()}>
+              <Icon name="closecircleo" size={32} color="red" />
+            </CloseButton>
+          </Row>
+          <Input
             label="title"
             value={values.title}
             onChangeText={handleChange('title')}
           />
-          <Text>Tipo:</Text>
+          <Label>Tipo:</Label>
           <Row>
-            <RadioButton
-              value={values.type}
-              status={values.type === 'empresas' ? 'checked' : 'unchecked'}
-              onPress={() => setFieldValue('type', 'empresas')}
-            />
-            <Text>Empresas</Text>
+            <Row>
+              <RadioButton
+                value={values.type}
+                status={values.type === 'empresas' ? 'checked' : 'unchecked'}
+                onPress={() => setFieldValue('type', 'empresas')}
+              />
+              <Text>Empresas</Text>
+            </Row>
+            <Row>
+              <RadioButton
+                value={values.type}
+                status={
+                  values.type === 'universidades' ? 'checked' : 'unchecked'
+                }
+                onPress={() => setFieldValue('type', 'universidades')}
+              />
+              <Text>Universidades</Text>
+            </Row>
           </Row>
-          <Row>
-            <RadioButton
-              value={values.type}
-              status={values.type === 'universidades' ? 'checked' : 'unchecked'}
-              onPress={() => setFieldValue('type', 'universidades')}
-            />
-            <Text>Universidades</Text>
-          </Row>
-          <TextInput
+          <Input
             label="Descrição"
             value={values.description}
             onChangeText={handleChange('description')}
           />
-          <TextInput
+          <Input
             label="Data"
             value={values.date}
             onChangeText={handleChange('date')}
           />
-          <TextInput
+          <Input
             label="Horário"
             value={values.hour}
             onChangeText={handleChange('hour')}
           />
-          <TextInput
+          <Input
             label="Local"
             value={values.place}
             onChangeText={handleChange('place')}
           />
-          <TextInput
+          <Input
             label="URL da imagem"
             value={values.imageURL}
             onChangeText={handleChange('imageURL')}
           />
-          <TextInput
+          <Input
             label="Quantidade de ingressos"
             value={values.ticketsAmount.toString()}
             onChangeText={handleChange('ticketsAmount')}
           />
 
-          <TextInput
+          <Input
             label="Valor do ingresso"
             value={values.ticketPrice.toString()}
             onChangeText={handleChange('ticketPrice')}
           />
 
-          <Button mode="contained" onPress={() => handleSubmit()}>
+          <SubmitButton mode="contained" onPress={() => handleSubmit()}>
             Submit
-          </Button>
+          </SubmitButton>
         </Container>
       )}
     </Formik>
