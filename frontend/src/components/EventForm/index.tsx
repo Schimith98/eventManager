@@ -48,9 +48,8 @@ const EventForm = ({event, toogleModalVisibility, updateList}) => {
       ticketsArray.push({
         id: i + 1,
         price: parseFloat(obj.ticketPrice),
-        // available: event ? event.tickets[i].available : true,
-        available: true,
-        buyerEmail: '',
+        available: i < event.tickets.length ? event.tickets[i].available : true,
+        buyerEmail: i < event.tickets.length ? event.tickets[i].buyerEmail : '',
       });
     }
 
@@ -72,7 +71,6 @@ const EventForm = ({event, toogleModalVisibility, updateList}) => {
   const saveEvent = async (obj: IEvent) => {
     try {
       const response = await eventsService.save(obj);
-      // console.log(response);
       Alert.alert('Evento salvo com sucesso');
       toogleModalVisibility();
       updateList();
@@ -85,7 +83,6 @@ const EventForm = ({event, toogleModalVisibility, updateList}) => {
   const onSubmit = async obj => {
     try {
       const event: IEvent = await mountObject(obj);
-      console.log(event);
       saveEvent(event);
     } catch (error) {
       console.log('Error /EventForm/onSubmit: ' + error);

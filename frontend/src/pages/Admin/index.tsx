@@ -86,7 +86,6 @@ const Admin: React.FC = () => {
 
   const showTickets = (event: IEvent) => {
     let ticketsUnavailable = 0;
-    //console.log(event.tickets[0].available);
     for (let i = 0; i < event.tickets.length; i++) {
       if (!event.tickets[i].available) {
         ticketsUnavailable = ticketsUnavailable + 1;

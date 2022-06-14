@@ -4,8 +4,9 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from '../pages/Home';
 import Admin from '../pages/Admin';
 import EventPage from '../pages/EventPage';
+import {RootStackParamList} from '../interfaces/navigation';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 const Routes = () => {
   return (

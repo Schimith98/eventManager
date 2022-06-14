@@ -12,7 +12,7 @@ export interface IEvent {
 
 export interface ITicket {
   id: number;
-  available: boolean;
+  available: boolean | undefined;
   price: number;
-  buyerEmail: string;
+  buyerEmail: string | undefined;
 }

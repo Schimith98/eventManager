@@ -13,45 +13,54 @@ import Icon from 'react-native-vector-icons/AntDesign';
 import {Alert} from 'react-native';
 import {events as eventsService} from '../../services/events';
 import {useNavigation} from '@react-navigation/native';
+import {EventPageScreenNavigation} from '../../interfaces/navigation';
 
-const BuyForm = ({event, toogleModalVisibility}) => {
-  const [email, setEmail] = useState<String>('');
-  const [ticket, setTicket] = useState<ITicket | null>();
+interface IBuyFormProps {
+  event: IEvent | undefined;
+  toogleModalVisibility: VoidFunction;
+}
 
-  const navigation = useNavigation();
+const BuyForm = ({event, toogleModalVisibility}: IBuyFormProps) => {
+  const [email, setEmail] = useState<string>('');
+  const [ticket, setTicket] = useState<ITicket | undefined>(undefined);
 
-  const payment = async () => {
+  const navigation = useNavigation<EventPageScreenNavigation>();
+
+  const payment: VoidFunction = async () => {
     try {
-      const newEvent = await tradeTicket();
-      const response = await eventsService.save(newEvent);
-      if (response.status === 200) {
-        Alert.alert('Pagamento realizado!');
-        navigation.goBack();
+      const newEvent: IEvent | undefined = await tradeTicket();
+      if (newEvent) {
+        const response = await eventsService.save(newEvent);
+        if (response.status === 200) {
+          Alert.alert('Pagamento realizado!');
+          navigation.navigate('Home');
+        }
       }
     } catch (error) {
       console.log('Error /BuyForm/payment: ' + error);
     }
   };
 
-  const tradeTicket = async () => {
-    const newEvent = event;
-    const index = await event.tickets.findIndex(t => t.id === ticket?.id);
+  const tradeTicket = async (): Promise<IEvent | undefined> => {
+    const newEvent: IEvent = event!;
+    const index: number = event!.tickets.findIndex(t => t.id === ticket?.id);
     if (index > -1) {
-      newEvent.tickets[index].available = false;
-      newEvent.tickets[index].buyerEmail = email;
+      newEvent!.tickets[index].available = false;
+      newEvent!.tickets[index].buyerEmail = email;
       return newEvent;
     } else {
       Alert.alert('Ingressos esgotados');
+      return undefined;
     }
   };
 
   const getTicket = () => {
-    const availableTicket = event.tickets.find(t => t.available === true);
+    const availableTicket = event!.tickets.find(t => t.available === true);
     if (availableTicket) {
       setTicket(availableTicket);
     } else {
       Alert.alert('Ingressos esgotados');
-      navigation.goBack();
+      navigation.navigate('Home');
     }
   };
 

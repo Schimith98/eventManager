@@ -2,8 +2,9 @@ import React, {useState} from 'react';
 import Modal from 'react-native-modal';
 import {Container, Button, Title} from './style';
 import Icon from 'react-native-vector-icons/Feather';
-import {TouchableOpacity, TouchableOpacityBase} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import {HomeScreenNavigation} from '../../interfaces/navigation';
 
 const Menu = () => {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -11,7 +12,7 @@ const Menu = () => {
     setModalVisible(!isModalVisible);
   };
 
-  const navigation = useNavigation();
+  const navigation = useNavigation<HomeScreenNavigation>();
 
   const goTo = routeName => {
     navigation.navigate(routeName);

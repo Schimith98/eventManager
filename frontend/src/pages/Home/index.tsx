@@ -10,11 +10,11 @@ import {
   Accordion,
   Item,
 } from './style';
-import {Divider, List} from 'react-native-paper';
+import {List} from 'react-native-paper';
 import {IEvent} from '../../interfaces/event';
 import {events as eventsService} from '../../services/events';
 import Loading from '../../components/Loading';
-import {useNavigation} from '@react-navigation/native';
+import {HomeNavigationProps} from '../../interfaces/navigation';
 
 const eventImageDefault1 = {
   uri: 'https://atualeventos.com/wp-content/uploads/2020/09/atual-eventos-banner.jpg',
@@ -23,15 +23,13 @@ const eventImageDefault2 = {
   uri: 'https://d8rsosim10d20.cloudfront.net/small_samuel_pereira_uf2nn_AN_Wa8_Q_unsplash_1_b8d0c29126.jpg',
 };
 
-const Home: React.FC = () => {
+const Home = ({navigation}: HomeNavigationProps) => {
   const [companyEventList, setCompanyEventList] = useState<
     IEvent[] | undefined
   >(undefined);
   const [collegeEventList, setCollegeEventList] = useState<
     IEvent[] | undefined
   >(undefined);
-
-  const navigation = useNavigation();
 
   const [loading, setLoading] = useState<boolean>(false);
 
